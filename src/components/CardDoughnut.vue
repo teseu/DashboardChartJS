@@ -23,7 +23,10 @@ const props = defineProps({
     type: Array,
   },
   title: String,
-  percentage: Number,
+  percentage: String,
+  expected: String,
+  reachedSVG: String,
+  reached: String,
 })
 
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -39,6 +42,15 @@ ChartJS.register(ArcElement, Tooltip, Legend)
         <p class="text-base font-normal">alcançada</p>
       </div>
     </div>
-    <p class="text-sm font-medium text-white mt-8">NPS Score <span class="font-normal">75</span></p>
+    <p class="text-sm font-medium text-white flex justify-between w-full mt-8">
+    <div class="inline-block">
+        <img class="inline-block" src="../assets/labelEsperado.svg" alt="label esperado">
+      Esperado <span class="font-normal ml-2"> {{ props.expected }}</span>
+    </div>
+    <div class="inline-block">
+        <img class="inline-block" :src="props.reachedSVG" alt="label alcançado">
+      Alcançado <span class="font-normal ml-2"> {{ props.reached }}</span>
+    </div>
+    </p>
   </div>
 </template>
