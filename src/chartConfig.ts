@@ -15,5 +15,5 @@ export const options = {
   borderWidth: 0,
   circumference: 270,
   responsive: true,
-  maintainAspectRatio: true
+  maintainAspectRatio: true,
 }
